@@ -30,7 +30,7 @@ public class File {
         int i;
         FileInputStream fileInputStream = new FileInputStream("d:\\C26-onl. Java\\tms.txt");
         while ((i = fileInputStream.read()) != -1) {
-            String str = new String(String.valueOf((char) i).replace(" ", "_"));
+            String str = new String(String.valueOf((char) i).replace(" ", "_"));// правильно ли все написано?
             System.out.print(str);
         }
         fileInputStream.close();
