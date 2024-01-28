@@ -29,7 +29,7 @@ public class FileUtilWrite {
         try {
             FileReader fr = new FileReader("d:\\C26-onl. Java\\tms2.txt");
             while ((i = fr.read()) != -1) {
-                String str1 = new String(valueOf((char) i).charAt(0)));
+                String str1 = new String(valueOf((char) i).charAt(0)));// тут ругается,не знаю как написать
                 System.out.print(str1);
             }
         } catch (FileNotFoundException e) {
