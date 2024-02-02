@@ -10,10 +10,10 @@ import java.io.IOException;
  * Используя FileReader и FileWriter сначала записать в файл tms2.txt фразу на латыни
  * “Cognosce te ipsum”, а затем считать ее и вывести в консоль первую букву.
  */
-public class FileUtilWrite {
+public class Util {
     public static void main(String[] args) throws IOException {
 
-        String str = "Cognosce te ipsum";
+        String str =  "Cognosce te ipsum";
 
         try {
             FileWriter fileWriter = new FileWriter("d:\\C26-onl. Java\\tms2.txt");
@@ -21,18 +21,25 @@ public class FileUtilWrite {
             fileWriter.close();
 
             System.out.println("Content was written successfully.");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
-        int i;
+        } catch (IOException e) {
+            throw new RuntimeException(e);// правильные ли исключения?
+        }
         try {
             FileReader fr = new FileReader("d:\\C26-onl. Java\\tms2.txt");
+
+            StringBuilder str1 = new StringBuilder();
+            int i;
             while ((i = fr.read()) != -1) {
-                String str1 = new String(valueOf((char) i).charAt(0)));// тут ругается,не знаю как написать
-                System.out.print(str1);
+                char a = (char) i;
+                str1.append(a);
             }
+            fr.close();
+            System.out.println("output first symbol:"+str1.charAt(0));
+
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException(e);// правильно ли все домучал с заданием? есть ли замечания по коду?:)
+
         }
+    }
 }
